@@ -1,14 +1,19 @@
-public class Greeting (String formality){
-    public String getGreeting {
-        if (formality == "formal") {
-            return "Good evening";
-        } else if (formality == "casual") {
-            return "Goodday?";
-        } else if (formality == "intimate") {
-            return "Hello darling!";
-        } else {
-            return "Hello.";
-        }
+import java.util.*;
+
+public class Greeting {
+    Map<String, String> greetingStore = new HashMap<>(){{
+        put(null, "Hello.");
+        put("formal", "Good evening");
+        put("casual", "Goodday?");
+        put("intimate", "Hello darling!");
+    }};
+
+    public void addGreeting(String formality, String greeting){
+        greetingStore.put(formality, greeting);
+    }
+
+    public String getGreeting(String formality) {
+        return greetingStore.get(formality);
 
     }
 }
