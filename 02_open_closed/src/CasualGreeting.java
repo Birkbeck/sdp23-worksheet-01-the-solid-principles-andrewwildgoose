@@ -1,9 +1,7 @@
 public class CasualGreeting implements Greeting{
 
-    public String formality = "casual";
-
     @Override
-    public String greeting() {
+    public String greet() {
         return "Goodday?";
     }
 }
